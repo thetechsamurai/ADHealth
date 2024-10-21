@@ -8,7 +8,6 @@ $ScrptStartTime = (Get-Date).ToString('dd-MM-yyyy hh:mm:ss')
 $sw = [Diagnostics.Stopwatch]::StartNew()
 
 # Get Script Directory
-$Scriptpath = $($MyInvocation.MyCommand.Path)
 $Dir = $(Split-Path $Scriptpath);
 
 # Report
