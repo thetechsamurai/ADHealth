@@ -1,3 +1,6 @@
+#Run Audit Report
+Invoke-Expression (Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thetechsamurai/ADHealth/main/ADAudit.ps1").Content
+
 # Create a temporary directory
 $tempDir = New-Item -Path (Join-Path -Path $env:TEMP -ChildPath "ADSecurityCheckTemp") -ItemType Directory -Force
 
@@ -28,3 +31,6 @@ Write-Output "Config file created at: $configFilePath"
 
 # Optionally, execute the downloaded script
 & $scriptPath
+
+# Open the directory where the files were saved
+Invoke-Item $tempDir.FullName
